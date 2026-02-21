@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PokeRoster</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <img src="/images/pokemon.png" alt="Pokemon Logo" class="logo">
+  <div class="container">
+    <h1 class="title">PokeRoster</h1>
+
+    <div class="stats">
+      <div class="card">
+        <h2><%= totalTrainers %></h2>
+        <p>Total Trainers</p>
+      </div>
+
+      <div class="card">
+        <h2><%= totalPokemons %></h2>
+        <p>Total Pokémons</p>
+      </div>
+
+      <div class="card">
+        <h2><%= totalTypes %></h2>
+        <p>Total Types</p>
+      </div>
+    </div>
+
+    <div class="actions">
+      <a href="/trainers" class="btn">View All Trainers</a>
+      <a href="/add-pokemon" class="btn secondary">Add Pokémon</a>
+    </div>
+  </div>
+
+</body>
+</html>

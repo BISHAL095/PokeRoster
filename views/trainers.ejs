@@ -1,7 +1,58 @@
-<h2>All Trainers</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>All Trainers</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
 
-<ul>
-  <% trainers.forEach(trainer => { %>
-    <li><%= trainer.name %></li>
-  <% }) %>
-</ul>
+  <div class="trainers-container">
+    <h1 class="page-title">All Trainers</h1>
+
+    <div class="trainer-grid">
+      <% trainers.forEach(trainer => { %>
+          <div class="trainer-card" data-id="<%= trainer.id %>">          
+          <!-- Always visible -->
+          <div class="trainer-summary">
+            <h3><%= trainer.name %></h3>
+            <span class="pokemon-count">
+              <%= trainer.pokemons.length %> Pokémon
+            </span>
+          </div>
+
+          <!-- Hidden by default -->
+          <div class="trainer-details" id="details-<%= trainer.id %>">
+            <% if (trainer.pokemons.length > 0) { %>
+              <div class="pokemon-list">
+                <% trainer.pokemons.forEach(pokemon => { %>
+                    <div class="pokemon-badge">
+                    <%= pokemon.name %>
+                    </div>
+                <% }) %>
+              </div>
+            <% } else { %>
+              <p>No Pokémon yet</p>
+            <% } %>
+          </div>
+
+        </div>
+      <% }) %>
+    </div>
+
+    <a href="/" class="back-link">← Back to Home</a>
+  </div>
+
+  <script>
+  const cards = document.querySelectorAll(".trainer-card");
+
+  cards.forEach(card => {
+    card.addEventListener("click", function () {
+      const id = this.dataset.id;
+      const details = document.getElementById("details-" + id);
+      details.classList.toggle("show");
+    });
+  });
+</script>
+</body>
+</html>

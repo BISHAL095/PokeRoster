@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Pokémon</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+  <div class="form-container">
+    <h1 class="form-title">Add Pokémon</h1>
+
+    <form action="/add-pokemon" method="POST" class="pokemon-form">
+
+      <!-- Pokemon Name -->
+      <div class="form-group">
+        <label for="name">Pokémon Name</label>
+        <input 
+          type="text" 
+          name="name" 
+          id="name" 
+          required
+        >
+      </div>
+
+      <!-- Trainer Autocomplete -->
+      <div class="form-group">
+        <label for="trainer_name">Trainer</label>
+
+        <!-- Visible input (sends trainer_name) -->
+        <input 
+          type="text"
+          name="trainer_name"
+          id="trainer_name"
+          list="trainers-list"
+          placeholder="Start typing trainer name..."
+          autocomplete="off"
+          required
+        >
+
+        <!-- Hidden input (stores trainer_id if existing selected) -->
+        <input 
+          type="hidden" 
+          name="trainer_id" 
+          id="trainer_id"
+        >
+
+        <datalist id="trainers-list">
+          <% trainers.forEach(trainer => { %>
+            <option 
+              value="<%= trainer.name %>" 
+              data-id="<%= trainer.id %>">
+            </option>
+          <% }) %>
+        </datalist>
+      </div>
+
+      <!-- Type Selection -->
+      <div class="form-group">
+        <label>Type</label>
+        <div class="radio-group">
+          <% types.forEach(type => { %>
+            <label class="radio-item">
+              <input 
+                type="radio" 
+                name="type_id" 
+                value="<%= type.id %>" 
+                required
+              >
+              <span><%= type.name %></span>
+            </label>
+          <% }) %>
+        </div>
+      </div>
+
+      <button type="submit" class="btn">Add Pokémon</button>
+
+      <a href="/" class="back-link">← Back to Home</a>
+
+    </form>
+  </div>
+
+  <script src="../scripts/"></script>
+
+</body>
+</html>

@@ -1,0 +1,290 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #f44336, #ff9800);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  width: 200px;      
+  height: auto;      
+  display: block;
+  margin: 0 auto 20px auto;
+}
+
+/* Container */
+.container {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 800px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Title */
+.title {
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  color: #333;
+}
+
+/* Stats Section */
+.stats {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* Cards */
+.card {
+  flex: 1;
+  background: #f4f4f4;
+  padding: 1.5rem;
+  border-radius: 10px;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h2 {
+  font-size: 2rem;
+  color: #f44336;
+}
+
+/* Buttons */
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.btn {
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  background-color: #f44336;
+  color: white;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background 0.2s ease;
+}
+
+.btn:hover {
+  background-color: #d32f2f;
+}
+
+.btn.secondary {
+  background-color: #333;
+}
+
+.btn.secondary:hover {
+  background-color: #111;
+}
+
+/* Form Page Styling */
+
+.form-container {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 600px;
+  margin: 50px auto;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.form-title {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.pokemon-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+input[type="text"],
+select {
+  padding: 0.6rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+input[type="text"]:focus,
+select:focus {
+  outline: none;
+  border-color: #f44336;
+}
+
+.radio-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.radio-item {
+  background: #f4f4f4;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.radio-item:hover {
+  background: #e0e0e0;
+}
+
+button.btn {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  border: none;
+  background-color: #f44336;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+button.btn:hover {
+  background-color: #d32f2f;
+}
+
+.back-link {
+  display: block;
+  margin-top: 1rem;
+  text-align: center;
+  text-decoration: none;
+  color: #333;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+/* Trainers Page */
+
+.trainers-container {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 900px;
+  margin: 50px auto;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+.page-title {
+  margin-bottom: 2rem;
+}
+
+.trainer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.trainer-card {
+  background: #f4f4f4;
+  padding: 1.5rem;
+  border-radius: 10px;
+  transition: transform 0.2s ease, background 0.2s ease;
+  cursor: pointer;
+}
+
+.trainer-card:hover {
+  transform: translateY(-5px);
+  background: #ffe0e0;
+}
+
+.trainer-card h3 {
+  margin: 0;
+  color: #333;
+}
+
+.trainer-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.trainer-card:hover {
+  transform: scale(1.03);
+}
+
+.trainer-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pokemon-count {
+  background: #ffcb05;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+.trainer-details {
+  margin-top: 15px;
+  display: none;
+}
+
+.trainer-details.show {
+  display: block;
+}
+
+.pokemon-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.pokemon-badge {
+  background: linear-gradient(135deg, #ffcb05, #ff9900);
+  color: #2a2a2a;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease;
+}
+
+.pokemon-badge:hover {
+  transform: scale(1.08);
+}
